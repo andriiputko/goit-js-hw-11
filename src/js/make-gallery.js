@@ -100,7 +100,7 @@ const goSearch = async () => {
   if (imgs.hits.length < 40) {
     getImages.setEndOfResults(true);
     showNotification.endOfResults();
-    // buttonStatus.hide(refs.loadMoreBtn);
+
     return;
   }
 
@@ -114,7 +114,7 @@ const loadMore = async () => {
     if (imgs.hits.length < 40) {
       getImages.setEndOfResults(true);
       showNotification.endOfResults();
-      // buttonStatus.hide(refs.loadMoreBtn);
+      
     }
 
     renderMarkup(imgs);
@@ -159,7 +159,7 @@ const handleSearchSubmit = event => {
 
   refs.gallery.innerHTML = '';
   buttonStatus.Off(refs.submitBtn);
-  // buttonStatus.hide(refs.loadMoreBtn);
+  
   getImages.setQuery(searchQuery.value.trim());
   getImages.setEndOfResults(false);
   getImages.resetPage();
@@ -171,4 +171,3 @@ const handleSearchSubmit = event => {
 };
 
 refs.form.addEventListener('submit', handleSearchSubmit);
-// refs.loadMoreBtn.addEventListener('click', infiniteScroll);
